@@ -11,7 +11,7 @@ on:
           - info
           - warning
           - debug
-     tags:
+      tags:
         description: 'Test scenario'
         required: false
         type: boolean
