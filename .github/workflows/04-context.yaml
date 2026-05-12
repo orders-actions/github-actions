@@ -19,6 +19,6 @@ jobs:
 
             - name: access env variables
               run: |
-                echo "Project: $Project"
-                echo "Component: $Component"
+                echo "Project: $project"
+                echo "Component: $component"
                 echo "Environment: $environment"
