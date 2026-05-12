@@ -35,8 +35,8 @@ jobs:
             - name: image tag
               id: tag 
               run: | 
-                echo "value=1.0.0" >> $GITHUB_OUTPUT
-                echo "image-name=catalogue" >>GITHUB_OUTPUT
+                echo "veesion=1.0.0" >> $GITHUB_OUTPUT
+                echo "image-name=catalogue" >> $GITHUB_OUTPUT
 
             - name: print previous step output
               run: | 
