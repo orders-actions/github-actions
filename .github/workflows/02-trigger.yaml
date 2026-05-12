@@ -1,0 +1,10 @@
+name: triggers
+on: workflow_dispatch
+
+jobs:
+    #job name
+    trigger:
+        runs-on: ubuntu-latest #Github hosted runners
+        steps:
+            - name: Greet the world
+              run: echo "manually dispatch"
