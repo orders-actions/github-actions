@@ -1,8 +1,13 @@
 name: Triggers
-on: 
-    push:
+on:
+    # If some one opens to pr to main branch 
+    pull_request:
+        types: [opened,reopened]
         branches:
-            - 'main'
+            - 'release/**'
+    #push:
+     #   branches:
+            #- 'main'
     #workflow_dispatch
 
 jobs:
