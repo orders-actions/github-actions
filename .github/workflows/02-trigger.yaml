@@ -1,5 +1,9 @@
-name: triggers
-on: workflow_dispatch
+name: Triggers
+on: 
+    push:
+        branches:
+            - 'feature*'
+    #workflow_dispatch
 
 jobs:
     #job name
