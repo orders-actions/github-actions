@@ -68,4 +68,15 @@ jobs:
            echo "Image Name: ${{ needs.github-context.outputs.image-name }}"
            echo "Image Version: ${{ needs.github-context.outputs.image-version }}"
 
+    scan: 
+      runs-on: latest
+      steps: 
+        - name: run sonar scan
+          run: echo "Sonar Scan"
+
+        - name: print Job Contexts
+          run: echo "${{ toJson(job) }}"
+
+        - name: print runner Contexts
+          run: echo "${{ toJson(runner) }}"
         
