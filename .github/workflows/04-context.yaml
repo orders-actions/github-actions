@@ -11,6 +11,11 @@ jobs:
     #job name
     github-context: 
         runs-on: ubuntu-latest #Github hosted runners
+        
+        outputs: 
+          image-name: ${{ steps.tag.outputs.image-name }}
+          image-version: ${{ steps.tag.outputs.image-version }}
+
         steps: 
             - name: print info
               run: | 
@@ -42,7 +47,8 @@ jobs:
               run: | 
                  echo "Image name: ${{ steps.tag.outputs.image-name }}"
                  echo "Version: ${{ steps.tag.outputs.version }}"
-
+            
+              # useful with in the job    
             - name: github env
               run: |
                  echo "Action=github-actions"  >> $GITHUB_ENV
@@ -53,4 +59,13 @@ jobs:
                 echo "Action: $Action"
                 echo "Time: $Time"  
 
-            
+    deploy:
+      needs: github-context #means depends on above job 
+      runs-on: ubuntu-latest #Github hosted runners
+      steps: 
+        - name: print github env in another job
+          run: |
+           echo "Image Name: ${{ needs.github-context.outputs.image-name }}"
+           echo "Image Version: ${{ needs.github-context.outputs.version }}"
+
+        
