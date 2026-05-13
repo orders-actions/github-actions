@@ -14,7 +14,7 @@ jobs:
         
         outputs: 
           image-name: ${{ steps.tag.outputs.image-name }}
-          image-version: ${{ steps.tag.outputs.image-version }}
+          image-version: ${{ steps.tag.outputs.version }}
 
         steps: 
             - name: print info
